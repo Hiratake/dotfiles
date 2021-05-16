@@ -18,7 +18,7 @@ jobs:
       - name: Brew config
         run: |
           brew config
-          brwe list
+          brew list
       - name: Uninstall default node
         run: brew uninstall node
       - name: Install

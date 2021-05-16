@@ -1,9 +1,14 @@
 DOT_PATH := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 DOT_CANDIDATES := $(wildcard .??*) bin
-DOT_EXCLUSIONS := .DS_Store .git .gitignore .gitmodules .github
+DOT_EXCLUSIONS := .DS_Store .git .gitmodules .github
 DOT_FILES := $(filter-out $(DOT_EXCLUSIONS), $(DOT_CANDIDATES))
 
 .DEFAULT_GOAL := help
+
+all:
+
+list: ## Show dotfiles in this repo
+	@$(foreach val, $(DOT_FILES), /bin/ls -dF $(val);)
 
 install: ## Install dotfiles to home directory
 	@echo 'Hello, dotfiles.'
@@ -19,7 +24,14 @@ uninstall: ## Uninstall dotfiles and this repo
 	-rm -rf $(DOT_PATH)
 
 setup: ## Setup new environment
+	@echo 'Hello, dotfiles.'
+	@echo 'Start to setup new environment...'
 	@DOT_PATH=$(DOT_PATH) bash $(DOT_PATH)/etc/setup.sh
+
+update: ## Update dotfiles and this repo
+	@echo 'Hello, dotfiles.'
+	@echo 'Start to update dotfiles...'
+	@git pull origin main
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \

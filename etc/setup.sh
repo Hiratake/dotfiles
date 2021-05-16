@@ -1,11 +1,6 @@
 #!/bin/bash
 
 set -u
-
-echo 'Hi, my name is dotfiles.'
-echo 'Start to setup new environment...'
-echo ''
-
 cd $DOT_PATH
 
 echo 'Start to install Homebrew...'
@@ -21,14 +16,4 @@ brew upgrade
 echo 'Start to install brew formulas...'
 brew bundle --verbose
 brew cleanup
-
-echo 'Start to install nodenv...'
-anyenv install nodenv
-anyenv install phpenv
 exec $SHELL -l
-
-echo 'Start to install node...'
-nodenv install 14.17.0
-nodenv global 14.17.0
-exec $SHELL -l
-node -v

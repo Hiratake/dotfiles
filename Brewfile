@@ -1,19 +1,15 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 tap "homebrew/core"
-brew "anyenv"
-brew "composer"
+
 brew "curl"
 brew "fish"
 brew "git"
 brew "mariadb"
-brew "mkcert"
-brew "nginx"
-brew "starship"
-brew "vim"
-brew "yarn"
+brew "mas"
+
 cask "adobe-creative-cloud"
+cask 'docker'
 cask "figma"
 cask "firefox"
 cask "google-chrome"

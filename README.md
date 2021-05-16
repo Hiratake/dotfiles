@@ -5,8 +5,8 @@ Hiratake Dotfiles 📄✨
 ## Usage
 
 ```bash
-$ cd $HOME
-$ git clone https://github.com/Hiratake/dotfiles
+$ git clone https://github.com/Hiratake/dotfiles ~/dotfiles
+$ cd ~/dotfiles
 
 # Install dotfiles to home directory
 $ make install

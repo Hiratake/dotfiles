@@ -1,0 +1,8 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+brew "anyenv"
+brew "fish"
+brew "git"
+cask "visual-studio-code"

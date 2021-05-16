@@ -1,0 +1,29 @@
+name: CI
+on: [push]
+jobs:
+  test:
+    runs-on: macos-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get brew cache directory
+        run: echo "::set-output name=dir::$(brew --cache)/downloads"
+        id: brew-cache
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.brew-cache.outputs.dir }}
+          key: ${{ runner.os }}-${{ hashFiles('Brewfile') }}
+      - name: Brew config
+        run: brew config
+      - name: Uninstall default node
+        run: brew uninstall node@12
+      - name: Install
+        run: |
+          make
+          make install
+          make setup
+      - name: Cleanup
+        run: |
+          cd ${{ steps.brew-cache.outputs.dir }} && ls -lsS | head -n 10 | awk '{ print $10 }' | xargs rm -rf

@@ -1,6 +1,6 @@
 DOT_PATH := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 DOT_CANDIDATES := $(wildcard .??*) bin
-DOT_EXCLUSIONS := .DS_Store .git .gitignore .gitmodules
+DOT_EXCLUSIONS := .DS_Store .git .gitignore .gitmodules .github
 DOT_FILES := $(filter-out $(DOT_EXCLUSIONS), $(DOT_CANDIDATES))
 
 .DEFAULT_GOAL := help
@@ -19,7 +19,7 @@ uninstall: ## Uninstall dotfiles and this repo
 	-rm -rf $(DOT_PATH)
 
 setup: ## Setup new environment
-	bash ${DOT_PATH}/etc/setup.sh
+	@DOT_PATH=$(DOT_PATH) bash $(DOT_PATH)/etc/setup.sh
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \

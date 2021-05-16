@@ -16,9 +16,11 @@ jobs:
           path: ${{ steps.brew-cache.outputs.dir }}
           key: ${{ runner.os }}-${{ hashFiles('Brewfile') }}
       - name: Brew config
-        run: brew config
+        run: |
+          brew config
+          brwe list
       - name: Uninstall default node
-        run: brew uninstall node@12
+        run: brew uninstall node
       - name: Install
         run: |
           make

@@ -18,9 +18,8 @@ jobs:
       - name: Brew config
         run: |
           brew config
-          brew list
       - name: Uninstall default node
-        run: brew uninstall node
+        run: brew uninstall node@14
       - name: Install
         run: |
           make

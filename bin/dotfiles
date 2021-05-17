@@ -25,14 +25,23 @@ error() {
   exit 1
 }
 
+init() {
+  echo -e "Start to setup new environment..."
+}
+
 case "$1" in
   version)
     greeting
     echo -e "`basename $0` version 1.0.0\n"
     ;;
+  init)
+    greeting
+    init
+    ;;
   *)
     echo -e "\n"
     echo -e "Usage: `basename $0` <command>\n\n"
-    echo -e "   version\tShow version"
+    echo -e "   version\tShow version\n"
+    echo -e "   init\tSetup new environment\n"
     ;;
 esac

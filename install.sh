@@ -66,5 +66,3 @@ if [ ! -d ${DOTPATH} ]; then
 else
   error "dotfiles already exists in your home directory."
 fi
-
-source ~/.zshrc

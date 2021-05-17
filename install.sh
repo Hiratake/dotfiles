@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -u
-
 DOTPATH="$HOME/.dotfiles"
 BACKUPPATH="$HOME/.dotfiles-backup"
 COLOR_GRAY="\033[1;38;5;243m"

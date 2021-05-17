@@ -22,6 +22,7 @@ jobs:
         run: |
           bash ~/bin/dotfiles
           bash ~/bin/dotfiles version
+          bash ~/bin/dotfiles update
           bash ~/bin/dotfiles init
       - name: Cleanup
         run: |

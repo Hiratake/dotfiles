@@ -11,7 +11,7 @@ COLOR_YELLOW="\033[1;33m"
 COLOR_NONE="\033[0m"
 
 greeting() {
-  echo -e "\nHello, ${COLOR_BLUE}dotfiles${COLOR_NONE}.\n"
+  echo -e "Hello, ${COLOR_BLUE}dotfiles${COLOR_NONE}.\n"
 }
 
 has() {
@@ -24,38 +24,47 @@ error() {
 }
 
 init() {
-  echo -e "Start to setup new environment..."
   cd ${DOTPATH}
 
-  echo -e 'Start to install Homebrew...'
+  echo -e "Start to install Homebrew..."
   which brew >/dev/null 2>&1 || \
   /usr/bin/ruby -e \
     "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   which brew >/dev/null 2>&1 && brew doctor
   which brew >/dev/null 2>&1 && brew update --verbose
 
-  echo 'Start to upgrade Homebrew...'
+  echo -e "Start to upgrade Homebrew..."
   brew upgrade
 
-  echo 'Start to install brew formulas...'
+  echo -e "Start to install brew formulas..."
   brew bundle --verbose
   brew cleanup
   exec $SHELL -l
 }
 
+update() {
+  echo -e "Start to update dotfiles..."
+  cd ${DOTPATH}
+  git pull origin main
+}
+
 case "$1" in
   version)
     greeting
-    echo -e "`basename $0` version 1.0.0\n"
+    echo -e "`basename $0` version 1.0.0"
     ;;
   init)
     greeting
     init
     ;;
+  update)
+    greeting
+    update
+    ;;
   *)
-    echo -e "\n"
-    echo -e "Usage: `basename $0` <command>\n\n"
-    echo -e "   version\tShow version\n"
-    echo -e "   init\tSetup new environment\n"
+    echo -e "Usage: `basename $0` <command>"
+    echo -e "   version       Show version"
+    echo -e "   init          Setup new environment"
+    echo -e "   update        Update dotfiles and this repo"
     ;;
 esac

@@ -12,6 +12,10 @@ COLOR_PURPLE="\033[1;35m"
 COLOR_YELLOW="\033[1;33m"
 COLOR_NONE="\033[0m"
 
+greeting() {
+  echo -e "\nHello, ${COLOR_BLUE}dotfiles${COLOR_NONE}.\n"
+}
+
 has() {
   type "$1" > /dev/null 2>&1
 }
@@ -21,7 +25,7 @@ error() {
   exit 1
 }
 
-echo -e "\nHello, ${COLOR_BLUE}dotfiles${COLOR_NONE}.\n"
+greeting
 
 if [ ! -d ${DOTPATH} ]; then
   if has "git"; then
@@ -46,7 +50,7 @@ if [ ! -d ${DOTPATH} ]; then
     mkdir -p "$BACKUPPATH"
   fi
 
-  for f in $DOTPATH/.??* bin; do
+  for f in $DOTPATH/.??* $DOTPATH/bin; do
     [[ `basename $f` == ".DS_Store" ]] && continue
     [[ `basename $f` == ".git" ]] && continue
     [[ `basename $f` == ".gitmodules" ]] && continue
@@ -62,3 +66,5 @@ if [ ! -d ${DOTPATH} ]; then
 else
   error "dotfiles already exists in your home directory."
 fi
+
+source ~/.zshrc

@@ -17,7 +17,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('Brewfile') }}
       - name: Install
         run: |
-          sh ./install.sh
+          sh -c "$(curl -fsSL dot.hiratake.xyz)"
           ls -al ~/
       - name: Cleanup
         run: |

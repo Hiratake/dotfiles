@@ -46,7 +46,7 @@ if [ ! -d ${DOTPATH} ]; then
     mkdir -p "$BACKUPPATH"
   fi
 
-  for f in $DOTPATH/.??*; do
+  for f in $DOTPATH/.??* bin; do
     [[ `basename $f` == ".DS_Store" ]] && continue
     [[ `basename $f` == ".git" ]] && continue
     [[ `basename $f` == ".gitmodules" ]] && continue

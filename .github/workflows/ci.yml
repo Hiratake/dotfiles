@@ -18,7 +18,7 @@ jobs:
       - name: Install
         run: |
           bash -c "$(curl -fsSL dot.hiratake.xyz)"
-      - name: command
+      - name: Run command
         run: |
           bash ~/bin/dotfiles
           bash ~/bin/dotfiles version

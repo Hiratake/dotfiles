@@ -51,6 +51,7 @@ if [ ! -d ${DOTPATH} ]; then
   for f in $DOTPATH/.??* $DOTPATH/bin; do
     [[ `basename $f` == ".DS_Store" ]] && continue
     [[ `basename $f` == ".git" ]] && continue
+    [[ `basename $f` == ".gitignore" ]] && continue
     [[ `basename $f` == ".gitmodules" ]] && continue
     [[ `basename $f` == ".github" ]] && continue
     if [[ -L "$HOME/`basename $f`" ]]; then

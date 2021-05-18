@@ -20,10 +20,10 @@ jobs:
           bash -c "$(curl -fsSL dot.hiratake.xyz)"
       - name: Run command
         run: |
-          bash ~/bin/dotfiles
-          bash ~/bin/dotfiles version
-          bash ~/bin/dotfiles update
-          bash ~/bin/dotfiles init
+          bash ~/.bin/dotfiles
+          bash ~/.bin/dotfiles version
+          bash ~/.bin/dotfiles update
+          bash ~/.bin/dotfiles init
       - name: Cleanup
         run: |
           cd ${{ steps.brew-cache.outputs.dir }} && ls -lsS | head -n 10 | awk '{ print $10 }' | xargs rm -rf

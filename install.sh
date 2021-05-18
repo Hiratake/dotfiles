@@ -11,7 +11,7 @@ COLOR_YELLOW="\033[1;33m"
 COLOR_NONE="\033[0m"
 
 greeting() {
-  echo -e "\nHello, ${COLOR_BLUE}dotfiles${COLOR_NONE}.\n"
+  echo -e "Hello, ${COLOR_BLUE}dotfiles${COLOR_NONE}."
 }
 
 has() {
@@ -48,7 +48,7 @@ if [ ! -d ${DOTPATH} ]; then
     mkdir -p "$BACKUPPATH"
   fi
 
-  for f in $DOTPATH/.??* $DOTPATH/bin; do
+  for f in $DOTPATH/.??*; do
     [[ `basename $f` == ".DS_Store" ]] && continue
     [[ `basename $f` == ".git" ]] && continue
     [[ `basename $f` == ".gitignore" ]] && continue
@@ -62,7 +62,7 @@ if [ ! -d ${DOTPATH} ]; then
     fi
     ln -sfnv $f $HOME
   done
-  chmod -R 755 "${DOTPATH}/bin"
+  chmod -R 755 "${DOTPATH}/.bin"
 else
   error "dotfiles already exists in your home directory."
 fi

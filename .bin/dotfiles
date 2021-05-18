@@ -49,7 +49,7 @@ install() {
   if [ ! -d ${BACKUPPATH} ]; then
     mkdir -p "$BACKUPPATH"
   fi
-  for f in $DOTPATH/.??* $DOTPATH/bin; do
+  for f in $DOTPATH/.??*; do
     [[ `basename $f` == ".DS_Store" ]] && continue
     [[ `basename $f` == ".git" ]] && continue
     [[ `basename $f` == ".gitignore" ]] && continue
@@ -63,7 +63,7 @@ install() {
     fi
     ln -sfnv $f $HOME
   done
-  chmod -R 755 "${DOTPATH}/bin"
+  chmod -R 755 "${DOTPATH}/.bin"
 }
 
 update() {

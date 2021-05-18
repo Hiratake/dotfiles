@@ -36,3 +36,7 @@ setopt PUSHD_IGNORE_DUPS
 setopt SHARE_HISTORY
 
 unsetopt PRINT_EXIT_VALUE
+
+if type anyenv > /dev/null; then
+  eval "$(anyenv init -)"
+fi

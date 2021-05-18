@@ -61,6 +61,7 @@ if [ ! -d ${DOTPATH} ]; then
     fi
     ln -sfnv $f $HOME
   done
+  chmod -R 755 "${DOTPATH}/bin"
 else
   error "dotfiles already exists in your home directory."
 fi

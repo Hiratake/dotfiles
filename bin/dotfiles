@@ -78,7 +78,7 @@ case "$1" in
     ;;
   init)
     greeting
-    echo -e "Start to setup new environment..."
+    echo -e "Start to setup Homebrew and install packages..."
     init
     ;;
   install)
@@ -95,7 +95,7 @@ case "$1" in
   *)
     echo -e "Usage: `basename $0` <command>"
     echo -e "   version       Show version"
-    echo -e "   init          Setup new environment"
+    echo -e "   init          Setup Homebrew and install packages"
     echo -e "   install       Install dotfiles to home directory"
     echo -e "   update        Update dotfiles and this repo"
     ;;

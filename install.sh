@@ -63,6 +63,7 @@ if [ ! -d ${DOTPATH} ]; then
     ln -sfnv $f $HOME
   done
   chmod -R 755 "${DOTPATH}/.bin"
+  exec $SHELL -l
 else
   error "dotfiles already exists in your home directory."
 fi

@@ -40,3 +40,7 @@ unsetopt PRINT_EXIT_VALUE
 if type anyenv > /dev/null; then
   eval "$(anyenv init -)"
 fi
+
+if type starship > /dev/null; then
+  eval "$(starship init zsh)"
+fi

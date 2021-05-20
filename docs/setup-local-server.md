@@ -2,9 +2,9 @@
 
 ローカルサーバを構築する。
 
-## nginx の設定
+## ウェブサーバの設定
 
-nginx を設定する。
+[nginx](https://nginx.org/) を設定する。
 
 以下、 nginx の設定ファイルを設置するディレクトリを `$NGINX_ROOT` とする。  
 ( macOS の場合 `/usr/local/etc/nginx` )
@@ -65,9 +65,40 @@ $ sudo mkcert test.example.com
 - `ssl_certificate` と `ssl_certificate_key` に生成したSSL証明書を設定する。
 - `root` にドキュメントルートのパスを設定する。
 
-## phpMyAdmin の設定
+## データベースの設定
 
-phpMyAdmin を設定する。
+[MariaDB](https://mariadb.org/) を設定する。
+
+### MariaDB の初期設定
+
+MariaDB を起動する。  
+起動後、セキュリティ向上のため、以下コマンドを実行し初期設定を行う。
+
+```
+$ sudo mysql_secure_installation
+```
+
+各処理を実行するかどうか訊ねられるので、入力する。
+
+- `Enter current password for root`
+  - 初期設定時は root パスワードが設定されていないので入力しない。
+- `Switch to unix_socket authentication`
+  - 既に設定されている場合は n を入力する。
+- `Change the root password`
+  - root のパスワードを設定するので y を入力する。
+  - パスワードは任意のものを入力する。
+- `Remove anonymous users`
+  - 匿名ユーザは不要なので y を入力し削除する。
+- `Disallow root login remotely`
+  - リモートからの root ログインを無効化するので y を入力する。
+- `Remove test database and access to it`
+  - テストデータベースを削除するので y を入力する。
+- `Reload privilege tables now`
+  - 権限テーブルを再読み込みするため y を入力する。
+
+### phpMyAdmin の設定
+
+データベースをブラウザから確認できるよう phpMyAdmin を設定する。
 
 以下サイトから phpMyAdmin をダウンロードし、設定したローカルサーバのドキュメントルートに展開する。  
 https://www.phpmyadmin.net/

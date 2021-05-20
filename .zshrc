@@ -1,11 +1,12 @@
+# .zshrc
+
 export LANG=ja_JP.UTF-8
 export PATH=$HOME/.bin:$PATH
 
-alias ...='cd ../..'
-alias vi='vim'
-
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
+
+bindkey -e
 
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
 zstyle ':completion:*' format '%B%F{blue}%d%f%b'
@@ -36,6 +37,15 @@ setopt PUSHD_IGNORE_DUPS
 setopt SHARE_HISTORY
 
 unsetopt PRINT_EXIT_VALUE
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ls='ls -FG'
+alias la='ls -A'
+alias ll='ls -al'
+alias vi='vim'
+alias atom='code'
 
 if type anyenv > /dev/null; then
   eval "$(anyenv init -)"

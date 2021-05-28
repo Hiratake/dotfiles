@@ -73,5 +73,8 @@ style = "bold red"
 [git_status]
 disabled = true
 
+[package]
+symbol = " "
+
 [php]
 symbol = " "

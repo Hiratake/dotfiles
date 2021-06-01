@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
 brew "anyenv"
+brew "composer"
 brew "curl"
 brew "git"
 brew "grep"

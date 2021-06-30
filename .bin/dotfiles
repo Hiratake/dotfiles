@@ -38,6 +38,8 @@ init() {
   anyenv init
   anyenv install --force-init
   exec $SHELL -l
+  mkdir -p $(anyenv root)/plugins
+  git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
   anyenv install nodenv
   exec $SHELL -l
   nodenv install 14.17.0

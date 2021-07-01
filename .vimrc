@@ -53,3 +53,6 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライトを解除する
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" カラースキームを設定
+colorscheme codedark

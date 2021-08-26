@@ -21,7 +21,6 @@ brew "zsh"
 
 cask "adobe-creative-cloud"
 cask 'docker'
-cask "figma"
 cask "firefox"
 cask "google-chrome"
 cask "gyazo"

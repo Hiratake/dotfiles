@@ -20,6 +20,7 @@ brew "yarn"
 brew "zsh"
 
 cask "adobe-creative-cloud"
+cask "cyberduck"
 cask "firefox"
 cask "google-chrome"
 cask "gyazo"

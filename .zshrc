@@ -2,6 +2,7 @@
 
 export LANG=ja_JP.UTF-8
 export PATH=$HOME/.bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors

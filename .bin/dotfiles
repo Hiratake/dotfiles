@@ -42,8 +42,8 @@ init() {
   git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
   anyenv install nodenv
   exec $SHELL -l
-  nodenv install 14.17.4
-  nodenv global 14.17.4
+  nodenv install 16.13.2
+  nodenv global 16.13.2
 }
 
 install() {

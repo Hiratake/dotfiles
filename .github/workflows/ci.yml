@@ -6,7 +6,7 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Get brew cache directory
         run: echo "::set-output name=dir::$(brew --cache)/downloads"
         id: brew-cache

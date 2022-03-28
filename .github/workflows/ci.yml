@@ -11,7 +11,7 @@ jobs:
         run: echo "::set-output name=dir::$(brew --cache)/downloads"
         id: brew-cache
       - name: Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ steps.brew-cache.outputs.dir }}
           key: ${{ runner.os }}-${{ hashFiles('Brewfile') }}

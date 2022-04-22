@@ -3,6 +3,27 @@
 export LANG=ja_JP.UTF-8
 export PATH=$HOME/.bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
+export PHP_BUILD_CONFIGURE_OPTS="\
+  --disable-fpm \
+  --disable-phpdbg \
+  --enable-debug \
+  --with-bz2=$(brew --prefix bzip2) \
+  --with-curl=$(brew --prefix curl) \
+  --with-gettext=$(brew --prefix gettext) \
+  --with-gmp=$(brew --prefix gmp) \
+  --with-iconv=$(brew --prefix libiconv) \
+  --with-icu-dir=$(brew --prefix icu4c) \
+  --with-jpeg-dir=$(brew --prefix jpeg) \
+  --with-libedit=$(brew --prefix libedit) \
+  --with-libxml-dir=$(brew --prefix libxml2) \
+  --with-libzip=$(brew --prefix libzip)
+  --with-mcrypt=$(brew --prefix libmcrypt) \
+  --with-png-dir=$(brew --prefix libpng) \
+  --with-readline=$(brew --prefix readline) \
+  --with-tidy=$(brew --prefix tidy-html5) \
+  --with-xsl=$(brew --prefix libxslt) \
+  --with-zlib=$(brew --prefix zlib) \
+  --with-kerberos"
 
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors

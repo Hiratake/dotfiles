@@ -26,8 +26,8 @@ error() {
 init() {
   cd ${DOTPATH}
   if ! has "brew"; then
-    /usr/bin/ruby -e \
-      "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c \
+      "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
   brew doctor
   brew update
@@ -45,6 +45,8 @@ init() {
   exec $SHELL -l
   nodenv install 16.14.2
   nodenv global 16.14.2
+  phpenv install 8.1.5
+  phpenv global 8.1.5
 }
 
 install() {

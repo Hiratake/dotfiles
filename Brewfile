@@ -20,6 +20,7 @@ brew "zsh"
 
 cask "adobe-creative-cloud"
 cask "cyberduck"
+cask "docker"
 cask "firefox"
 cask "google-chrome"
 cask "gyazo"

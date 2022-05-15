@@ -41,12 +41,9 @@ init() {
   mkdir -p $(anyenv root)/plugins
   git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
   anyenv install nodenv
-  anyenv install phpenv
   exec $SHELL -l
   nodenv install 16.14.2
   nodenv global 16.14.2
-  phpenv install 8.1.5
-  phpenv global 8.1.5
 }
 
 install() {

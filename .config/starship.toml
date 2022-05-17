@@ -77,4 +77,4 @@ disabled = true
 symbol = " "
 
 [php]
-symbol = " "
+disabled = true

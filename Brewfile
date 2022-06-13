@@ -21,6 +21,7 @@ brew "zsh"
 
 cask "adobe-creative-cloud"
 cask "cyberduck"
+cask "dbeaver-community"
 cask "docker"
 cask "firefox"
 cask "google-chrome"

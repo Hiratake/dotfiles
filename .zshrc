@@ -3,6 +3,7 @@
 export LANG=ja_JP.UTF-8
 export PATH=$HOME/.bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
+export DOCKER_HOST=unix://$HOME/.lima/docker/sock/docker.sock
 
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors

@@ -5,6 +5,10 @@ export PATH=$HOME/.bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 export DOCKER_HOST=unix://$HOME/.lima/docker/sock/docker.sock
 
+if type brew > /dev/null; then
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
 

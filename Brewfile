@@ -19,6 +19,7 @@ brew "vim"
 brew "wget"
 brew "yarn"
 brew "zsh"
+brew "zsh-autosuggestions"
 
 cask "adobe-creative-cloud"
 cask "cyberduck"

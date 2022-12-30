@@ -22,6 +22,7 @@ brew "zsh"
 brew "zsh-autosuggestions"
 
 cask "adobe-creative-cloud"
+cask "chatwork"
 cask "cyberduck"
 cask "dbeaver-community"
 cask "firefox"

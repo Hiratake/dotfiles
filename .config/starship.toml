@@ -78,3 +78,6 @@ symbol = " "
 
 [php]
 disabled = true
+
+[aws]
+symbol = "🅰 "

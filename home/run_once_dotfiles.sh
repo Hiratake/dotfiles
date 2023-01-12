@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # ~/dotfiles.sh
 # ============================================================
@@ -18,11 +18,13 @@ setup_dependencies() {
 
     # Install Homebrew packages
     if ! command_exists brew; then
-      printf -- "%sInstalling Homebrew...%s\n" "$BLUE" "$RESET"
-      /bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      brew doctor
-      brew update
-      brew upgrade
+        printf -- "%sInstalling Homebrew...%s\n" "$BLUE" "$RESET"
+        /bin/bash -c \
+            "$(wget -qO- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        exec $SHELL -l
+        brew doctor
+        brew update
+        brew upgrade
     fi
     printf -- "%sInstalling/updating apps using Homebrew...%s\n" "$BLUE" "$RESET"
     brew bundle --global

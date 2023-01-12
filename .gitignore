@@ -1,7 +1,0 @@
-*~
-.DS_Store
-
-.config/*
-!.config/starship.toml
-
-Brewfile.lock.json

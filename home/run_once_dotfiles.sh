@@ -51,6 +51,7 @@ setup_color() {
 
 main() {
     printf -- "\n%sdotfiles setup script%s\n" "$BOLD" "$RESET"
+    exec $SHELL -l
     command_exists chezmoi || {
         error "chezmoi is not installed"
         exit 1

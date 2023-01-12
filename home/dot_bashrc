@@ -6,7 +6,7 @@
 # for examples
 
 # If not coming from .bash_profile and .bash_profile exists
-if [ -z "${COMING_FROM_BASH_PROFILE}" && -f "${HOME}/.bash_profile" ]; then
+if [[ -z "${COMING_FROM_BASH_PROFILE}" && -f "${HOME}/.bash_profile" ]]; then
     export COMING_FROM_BASHRC=true
     source "${HOME}/.bash_profile"
     unset COMING_FROM_BASHRC

@@ -51,9 +51,13 @@ setup_color() {
 
 main() {
     printf -- "\n%sdotfiles setup script%s\n" "$BOLD" "$RESET"
+
+    sudo apt update && sudo apt-get install -y build-essential wget
     source "${HOME}/.bash_profile"
+
     setup_dependencies
     setup_color
+
     printf -- "\n%sDone.%s\n\n" "$GREEN" "$RESET"
 }
 

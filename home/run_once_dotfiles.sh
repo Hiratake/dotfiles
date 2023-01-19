@@ -21,7 +21,7 @@ setup_dependencies() {
         printf -- "%sInstalling Homebrew...%s\n" "$BLUE" "$RESET"
         /bin/bash -c \
             "$(wget -qO- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        exec $SHELL -l
+        source "${HOME}/.bash_profile"
         brew doctor
         brew update
         brew upgrade
@@ -51,6 +51,7 @@ setup_color() {
 
 main() {
     printf -- "\n%sdotfiles setup script%s\n" "$BOLD" "$RESET"
+    source "${HOME}/.bash_profile"
     setup_dependencies
     setup_color
     printf -- "\n%sDone.%s\n\n" "$GREEN" "$RESET"

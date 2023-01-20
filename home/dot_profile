@@ -13,17 +13,17 @@
 
 # homebrew
 if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 elif [ -x "${HOME}/.linuxbrew/bin/brew" ]; then
-  eval "$("${HOME}/.linuxbrew/bin/brew" shellenv)"
+    eval "$("${HOME}/.linuxbrew/bin/brew" shellenv)"
 fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "${HOME}/bin" ]; then
-  export PATH="${HOME}/bin:${PATH}"
+    export PATH="${HOME}/bin:${PATH}"
 fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "${HOME}/.local/bin" ]; then
-  export PATH="${HOME}/.local/bin:${PATH}"
+    export PATH="${HOME}/.local/bin:${PATH}"
 fi

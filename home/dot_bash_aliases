@@ -1,0 +1,7 @@
+# ~/.bash_aliases
+# ============================================================
+
+alias ls='ls -FG'
+alias la='ls -A'
+alias ll='ls -al'
+alias vi='vim'

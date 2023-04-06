@@ -1,0 +1,3 @@
+{{ if .is_devcontainer -}}
+run_once_setup_node.sh
+{{- end }}

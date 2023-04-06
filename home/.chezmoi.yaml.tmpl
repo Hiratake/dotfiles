@@ -1,0 +1,10 @@
+{{- $ubuntu := hasKey .chezmoi.osRelease "ubuntuCodename" -}}
+{{- $wsl := or (env "WSL_DISTRO_NAME") (env "IS_WSL") | not | not -}}
+{{- $devcontainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") (env "VSCODE_REMOTE_CONTAINERS_SESSION") (env "GITPOD_HOST") | not | not -}}
+
+{{- $minimum := or $devcontainer (not $ubuntu) -}}
+
+{{/* Here we "export" the variables, so we can access them outside this file */ -}}
+data:
+  is_wsl: {{ $wsl }}
+  is_devcontainer: {{ $minimum }}

@@ -20,3 +20,13 @@ fi
 if [ -d "${HOME}/.local/bin" ]; then
     export PATH="${HOME}/.local/bin:${PATH}"
 fi
+
+# {{ if .is_devcontainer -}}
+# pnpm
+export PNPM_HOME="${HOME}/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+# {{- end }}

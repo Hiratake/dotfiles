@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # ~/dotfiles.sh
 # ============================================================
@@ -35,11 +35,15 @@ setup_prompts() {
     printf -- "\n%sSetting up shell frameworks:%s\n\n" "$BOLD" "$RESET"
 
     # Install Zsh
-    sudo apt install -y zsh
-    command -v zsh | sudo tee -a /etc/shells
-    sudo chsh -s "$(command -v zsh)" "${USER}"
+    if ! command_exists zsh; then
+        printf -- "%sInstalling Zsh...%s\n" "$BLUE" "$RESET"
+        sudo apt install -y zsh
+        command -v zsh | sudo tee -a /etc/shells
+        sudo chsh -s "$(command -v zsh)" "${USER}"
+    fi
 
     # Install Sheldon
+    printf -- "%sInstalling Sheldon...%s\n" "$BLUE" "$RESET"
     wget -qO- https://rossmacarthur.github.io/install/crate.sh \
         | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
 }

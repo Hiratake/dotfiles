@@ -21,7 +21,7 @@ if [ -d "${HOME}/.local/bin" ]; then
     export PATH="${HOME}/.local/bin:${PATH}"
 fi
 
-# {{ if .is_devcontainer -}}
+# {{ if not .is_devcontainer -}}
 # pnpm
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 case ":$PATH:" in

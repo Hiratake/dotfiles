@@ -38,7 +38,12 @@ setup_node() {
     if ! command_exists pnpm; then
         printf -- "%sInstalling pnpm...%s\n" "$BLUE" "$RESET"
         wget -qO- https://get.pnpm.io/install.sh | sh -
+        source "${HOME}/.bashrc"
     fi
+
+    # Install Node.js
+    printf -- "%sInstalling Node.js using pnpm...%s\n" "$BLUE" "$RESET"
+    pnpm env use --global lts
 }
 
 main() {

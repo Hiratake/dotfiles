@@ -34,16 +34,16 @@ error() {
 setup_node() {
     printf -- "\n%sSetting up node:%s\n\n" "$BOLD" "$RESET"
 
-    # Install pnpm
-    if ! command_exists pnpm; then
-        printf -- "%sInstalling pnpm...%s\n" "$BLUE" "$RESET"
-        wget -qO- https://get.pnpm.io/install.sh | sh -
+    # Install Volta
+    if ! command_exists volta; then
+        printf -- "%sInstalling Volta...%s\n" "$BLUE" "$RESET"
+        curl https://get.volta.sh | bash -s -- --skip-setup
         source "${HOME}/.bashrc"
     fi
 
     # Install Node.js
-    printf -- "%sInstalling Node.js using pnpm...%s\n" "$BLUE" "$RESET"
-    pnpm env use --global lts
+    printf -- "%sInstalling Node.js using Volta...%s\n" "$BLUE" "$RESET"
+    volta install node
 }
 
 main() {

@@ -1,0 +1,14 @@
+# ~/.config/git/ignore
+# =============================================================================
+
+*~
+.DS_Store
+.git/
+.idea/
+.resin-sync.yml
+Thumbs.db
+__pycache__/
+*.bak
+*.swp
+*.pyc
+venv/

@@ -61,9 +61,6 @@
 {{-   end -}}
 {{- end -}}
 
-{{- $email := promptString "Git email address for the author/committer" }}
-{{- $name := promptString "Git username for the author/committer" }}
-
 {{/* Here we "export" the variables, so we can access them outside this file */ -}}
 data:
   is_macos: {{ $macos }}

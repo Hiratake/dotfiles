@@ -1,5 +1,5 @@
 {{- $ubuntu := hasKey .chezmoi.osRelease "ubuntuCodename" -}}
-{{- $macos := hasKey .chezmoi.os "darwin" -}}
+{{- $macos := eq .chezmoi.os "darwin" -}}
 {{- $wsl := or (env "WSL_DISTRO_NAME") (env "IS_WSL") | not | not -}}
 {{- $devcontainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") (env "VSCODE_REMOTE_CONTAINERS_SESSION") (env "GITPOD_HOST") | not | not -}}
 

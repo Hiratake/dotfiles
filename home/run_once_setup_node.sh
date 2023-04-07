@@ -44,6 +44,14 @@ setup_node() {
     # Install Node.js
     printf -- "%sInstalling Node.js using Volta...%s\n" "$BLUE" "$RESET"
     volta install node
+
+    # Install Yarn
+    printf -- "%sInstalling Yarn using Volta...%s\n" "$BLUE" "$RESET"
+    volta install yarn@1
+
+    # Install pnpm
+    printf -- "%sInstalling pnpm using Volta...%s\n" "$BLUE" "$RESET"
+    volta install pnpm
 }
 
 main() {

@@ -8,7 +8,7 @@
 {{- $windows := eq .chezmoi.os "windows" -}}
 {{- $wsl := or (env "WSL_DISTRO_NAME") (env "IS_WSL") | not | not -}}
 {{- $devcontainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") (env "VSCODE_REMOTE_CONTAINERS_SESSION") (env "GITPOD_HOST") | not | not -}}
-{{- $minimum := or $devcontainer (and (not $ubuntu) (not $macos)) -}}
+{{- $minimum := or $devcontainer (and (not $ubuntu) (not $macos) (not $windows)) -}}
 
 {{- if hasKey . "name" -}}
 {{-   $name = .name -}}

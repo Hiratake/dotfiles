@@ -27,7 +27,7 @@
     # Specify the command to invoke Sourcetree.
     {{ if .is_macos -}}
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    {{ else .is_windows -}}
+    {{ else if .is_windows -}}
     cmd = '' \"$LOCAL\" \"$REMOTE\"
     {{- end }}
 
@@ -50,7 +50,7 @@
     # Specify the command to invoke Sourcetree.
     {{ if .is_macos -}}
     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    {{ else .is_windows -}}
+    {{ else if .is_windows -}}
     cmd = '' \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     {{- end }}
 

@@ -38,7 +38,7 @@ setup_node() {
     if ! command_exists volta; then
         printf -- "%sInstalling Volta...%s\n" "$BLUE" "$RESET"
         curl https://get.volta.sh | bash -s -- --skip-setup
-        source "${HOME}/.bashrc"
+        source "${HOME}/.profile"
     fi
 
     # Install Node.js

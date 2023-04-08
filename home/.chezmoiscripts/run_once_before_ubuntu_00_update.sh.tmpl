@@ -3,7 +3,7 @@
 # ~/update.sh
 # ============================================================
 
-# {{- if and .is_ubuntu (not .is_devcontainer) -}}
+# {{- if and (or .is_ubuntu .is_wsl) (not .is_devcontainer) -}}
 
 sudo apt update
 sudo apt upgrade

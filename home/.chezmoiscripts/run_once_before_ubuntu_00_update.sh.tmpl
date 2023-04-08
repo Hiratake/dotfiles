@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# ~/update.sh
+# ============================================================
+
+# {{- if and .is_ubuntu (not .is_devcontainer) -}}
+
+sudo apt update
+sudo apt upgrade
+
+# {{- end }}

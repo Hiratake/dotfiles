@@ -6,7 +6,7 @@
 {{- $ubuntu := hasKey .chezmoi.osRelease "ubuntuCodename" -}}
 {{- $macos := eq .chezmoi.os "darwin" -}}
 {{- $windows := eq .chezmoi.os "windows" -}}
-{{- $wsl := or (env "WSL_DISTRO_NAME") (env "IS_WSL") | not | not -}}
+{{- $wsl := and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") | not | not -}}
 {{- $devcontainer := or (env "REMOTE_CONTAINERS") (env "CODESPACES") (env "VSCODE_REMOTE_CONTAINERS_SESSION") (env "GITPOD_HOST") | not | not -}}
 {{- $minimum := or $devcontainer (and (not $ubuntu) (not $macos) (not $windows)) -}}
 

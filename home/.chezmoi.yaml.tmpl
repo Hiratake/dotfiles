@@ -3,6 +3,7 @@
 
 {{- $interactive := stdinIsATTY -}}
 
+{{- $linux := eq .chezmoi.os "linux" -}}
 {{- $ubuntu := hasKey .chezmoi.osRelease "ubuntuCodename" -}}
 {{- $macos := eq .chezmoi.os "darwin" -}}
 {{- $windows := eq .chezmoi.os "windows" -}}
@@ -15,7 +16,7 @@
 {{- end -}}
 {{- if $interactive -}}
 {{-   range $i := until 99 -}}
-{{-     $question := "❔ What is your full name" -}}
+{{-     $question := "❔ What is your Git username" -}}
 {{-     $answer := "" -}}
 {{-     if $name -}}
 {{-       $answer = promptString $question $name -}}
@@ -24,10 +25,10 @@
 {{-     end -}}
 {{-     if regexMatch "^[A-Z][-' a-zA-Z]+$" $answer -}}
 {{-       $name = $answer -}}
-{{-       writeToStdout (printf "✅ Name set as '%s'\n" $name) -}}
+{{-       writeToStdout (printf "✅ Git username set as '%s'\n" $name) -}}
 {{-       break -}}
 {{-     end -}}
-{{-     writeToStdout (printf "❌ '%s' is an invalid name\n" $answer) -}}
+{{-     writeToStdout (printf "❌ '%s' is an invalid username\n" $answer) -}}
 {{-     if eq $i 98 -}}
 {{-       writeToStdout "❌ ERROR: maximum tries exceeded\n" -}}
 {{-       exit 1 -}}
@@ -40,7 +41,7 @@
 {{- end -}}
 {{- if $interactive -}}
 {{-   range $i := until 99 -}}
-{{-     $question := "❔ What is your email" -}}
+{{-     $question := "❔ What is your Git email" -}}
 {{-     $answer := "" -}}
 {{-     if $email -}}
 {{-       $answer = promptString $question $email -}}
@@ -50,7 +51,7 @@
 {{-     $answer = lower $answer -}}
 {{-     if regexMatch "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$" $answer -}}
 {{-       $email = $answer -}}
-{{-       writeToStdout (printf "✅ Email set as '%s'\n" $email) -}}
+{{-       writeToStdout (printf "✅ Git email set as '%s'\n" $email) -}}
 {{-       break -}}
 {{-     end -}}
 {{-     writeToStdout (printf "❌ '%s' is an invalid email\n" $answer) -}}
@@ -63,6 +64,7 @@
 
 {{/* Here we "export" the variables, so we can access them outside this file */ -}}
 data:
+  is_lunux: {{ $linux }}
   is_ubuntu: {{ $ubuntu }}
   is_macos: {{ $macos }}
   is_windows: {{ $windows }}

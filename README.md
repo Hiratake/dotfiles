@@ -1,5 +1,6 @@
 # 📄dotfiles
 
+[![CI](https://github.com/Hiratake/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/Hiratake/dotfiles/actions/workflows/ci.yml)
 [![Misskey](https://img.shields.io/badge/Misskey-@Hiratake-green?logo=misskey)](https://misskey.io/@Hiratake)
 [![coffee](https://img.shields.io/badge/coffee-hiratake-yellow?logo=buymeacoffee)](https://www.buymeacoffee.com/hiratake)
 

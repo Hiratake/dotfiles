@@ -1,3 +1,4 @@
+# {{ if not .is_devcontainer -}}
 #!/bin/bash
 
 # ~/setup_node.sh
@@ -64,3 +65,4 @@ main() {
 
 setup_color
 main "$@"
+# {{- end }}

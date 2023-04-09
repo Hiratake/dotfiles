@@ -71,17 +71,14 @@
 {{-     $question := "❔ Do you use GitHub with 1Password [y/N]" -}}
 {{-     $answer := "n" -}}
 {{-     $answer = promptBool $question -}}
-{{-     $answer = lower $answer -}}
-{{-     if regexMatch "^[yn]$" $answer -}}
-{{-       if $answer -}}
-{{-         $op = true -}}
-{{-         writeToStdout "✅ Use GitHub with 1Password\n" -}}
-{{-       else -}}
-{{-         $op = false -}}
-{{-         writeToStdout "✅ Not use GitHub with 1Password\n" -}}
-{{-       end -}}
-{{-       break -}}
+{{-     if $answer -}}
+{{-       $op = true -}}
+{{-       writeToStdout "✅ Use GitHub with 1Password\n" -}}
+{{-     else -}}
+{{-       $op = false -}}
+{{-       writeToStdout "✅ Not use GitHub with 1Password\n" -}}
 {{-     end -}}
+{{-     break -}}
 {{-     writeToStdout (printf "❌ '%s' is an invalid input\n" $answer) -}}
 {{-     if eq $i 98 -}}
 {{-       writeToStdout "❌ ERROR: maximum tries exceeded\n" -}}

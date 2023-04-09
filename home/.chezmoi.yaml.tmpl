@@ -69,13 +69,10 @@
 {{- if $interactive -}}
 {{-   range $i := until 99 -}}
 {{-     $question := "❔ Do you use GitHub with 1Password [y/N]" -}}
-{{-     $answer := false -}}
-{{-     $answer = promptBoolOnce $question -}}
-{{-     if $answer -}}
-{{-       $op = true -}}
+{{-     $op = promptBoolOnce $question -}}
+{{-     if $op -}}
 {{-       writeToStdout "✅ Use GitHub with 1Password\n" -}}
 {{-     else -}}
-{{-       $op = false -}}
 {{-       writeToStdout "✅ Not use GitHub with 1Password\n" -}}
 {{-     end -}}
 {{-     break -}}

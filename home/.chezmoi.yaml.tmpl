@@ -70,10 +70,10 @@
 {{-   range $i := until 99 -}}
 {{-     $question := "❔ Do you use GitHub with 1Password [y/N]" -}}
 {{-     $answer := "n" -}}
-{{-     $answer = promptString $question -}}
+{{-     $answer = promptBool $question -}}
 {{-     $answer = lower $answer -}}
 {{-     if regexMatch "^[yn]$" $answer -}}
-{{-       if eq $answer "y" -}}
+{{-       if $answer -}}
 {{-         $op = true -}}
 {{-         writeToStdout "✅ Use GitHub with 1Password\n" -}}
 {{-       else -}}

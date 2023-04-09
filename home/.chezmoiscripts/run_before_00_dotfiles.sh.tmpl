@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# ~/dotfiles.sh
+# ============================================================
+
+printf -- "\n%s=== Start setup with dotfiles... ===%s\n"
+
+# {{- if .is_lunux }}
+printf -- "%sLinux: true%s\n"
+# {{- else }}
+printf -- "%sLinux: false%s\n"
+# {{- end }}
+
+# {{- if .is_ubuntu }}
+printf -- "%sUbuntu: true%s\n"
+# {{- else }}
+printf -- "%sUbuntu: false%s\n"
+# {{- end }}
+
+# {{- if .is_macos }}
+printf -- "%smacOS: true%s\n"
+# {{- else }}
+printf -- "%smacOS: false%s\n"
+# {{- end }}
+
+# {{- if .is_windows }}
+printf -- "%sWindows: true%s\n"
+# {{- else }}
+printf -- "%sWindows: false%s\n"
+# {{- end }}
+
+# {{- if .is_wsl }}
+printf -- "\n%son WSL: true%s\n"
+# {{- else }}
+printf -- "\n%son WSL: false%s\n"
+# {{- end }}
+
+# {{- if .is_devcontainer }}
+printf -- "%son VSCode Dev Containers: true%s\n"
+# {{- else }}
+printf -- "%son VSCode Dev Containers: false%s\n"
+# {{- end }}

@@ -31,11 +31,15 @@ main() {
     sudo apt update
 
     # Install Docker
+    printf -- "%sInstalling Docker...%s\n"
     sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
     # Setting up Docker
     sudo usermod -aG docker $USER
+
+    # {{- if .is_wsl }}
     echo "[boot]\nsystemd=true" | sudo tee -a /etc/wsl.conf
+    # {{- end }}
 }
 
 main "$@"

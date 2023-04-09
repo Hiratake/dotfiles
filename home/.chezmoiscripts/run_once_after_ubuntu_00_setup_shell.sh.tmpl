@@ -3,7 +3,7 @@
 # ~/setup_shell.sh
 # ============================================================
 
-# {{- if and .is_linux (not .is_macos) }}
+# {{- if and .is_ubuntu }}
 
 command_exists() {
     command -v "$@" >/dev/null 2>&1
@@ -21,6 +21,8 @@ main() {
         else
             sudo dnf install -y zsh
         fi
+    else
+        printf -- "%sZsh already installed, skipping.%s\n"
     fi
 
     printf -- "%sSet Zsh as the default shell...%s\n"

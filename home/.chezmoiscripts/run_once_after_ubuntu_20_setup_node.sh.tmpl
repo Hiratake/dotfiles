@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 # ~/setup_node.sh
 # ============================================================
 
-# {{- if and .is_linux (not .is_macos) (not .is_devcontainer) }}
+# {{- if and .is_ubuntu (not .is_devcontainer) }}
 
 command_exists() {
     command -v "$@" >/dev/null 2>&1
@@ -18,6 +18,8 @@ main() {
         curl https://get.volta.sh | bash -s -- --skip-setup
         export VOLTA_HOME="$HOME/.volta"
         export PATH="$VOLTA_HOME/bin:$PATH"
+    else
+        printf -- "%sVolta already installed, skipping.%s\n"
     fi
 
     if command_exists volta; then

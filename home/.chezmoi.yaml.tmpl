@@ -3,7 +3,6 @@
 
 {{- $interactive := stdinIsATTY -}}
 
-{{- $linux := eq .chezmoi.os "linux" -}}
 {{- $ubuntu := hasKey .chezmoi.osRelease "ubuntuCodename" -}}
 {{- $macos := eq .chezmoi.os "darwin" -}}
 {{- $windows := eq .chezmoi.os "windows" -}}
@@ -64,7 +63,6 @@
 
 {{/* Here we "export" the variables, so we can access them outside this file */ -}}
 data:
-  is_linux: {{ $linux }}
   is_ubuntu: {{ $ubuntu }}
   is_macos: {{ $macos }}
   is_windows: {{ $windows }}

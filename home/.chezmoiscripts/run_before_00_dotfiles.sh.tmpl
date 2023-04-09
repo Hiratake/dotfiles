@@ -5,12 +5,6 @@
 
 printf -- "\n%s=== Start setup with dotfiles... ===%s\n"
 
-# {{- if .is_linux }}
-printf -- "%sLinux: true%s\n"
-# {{- else }}
-printf -- "%sLinux: false%s\n"
-# {{- end }}
-
 # {{- if .is_ubuntu }}
 printf -- "%sUbuntu: true%s\n"
 # {{- else }}
@@ -23,12 +17,6 @@ printf -- "%smacOS: true%s\n"
 printf -- "%smacOS: false%s\n"
 # {{- end }}
 
-# {{- if .is_windows }}
-printf -- "%sWindows: true%s\n"
-# {{- else }}
-printf -- "%sWindows: false%s\n"
-# {{- end }}
-
 # {{- if .is_wsl }}
 printf -- "\n%son WSL: true%s\n"
 # {{- else }}
@@ -39,4 +27,9 @@ printf -- "\n%son WSL: false%s\n"
 printf -- "%son VSCode Dev Containers: true%s\n"
 # {{- else }}
 printf -- "%son VSCode Dev Containers: false%s\n"
+# {{- end }}
+
+# {{- if and (not .is_ubuntu) (not .is_macos) (not .is_windows) }}
+printf -- "\n%sNot supported.%s\n"
+exit 0
 # {{- end }}

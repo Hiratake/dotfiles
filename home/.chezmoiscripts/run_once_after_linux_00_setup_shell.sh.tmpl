@@ -26,11 +26,6 @@ main() {
     printf -- "%sSet Zsh as the default shell...%s\n"
     command -v zsh | sudo tee -a /etc/shells
     sudo chsh -s "$(command -v zsh)" "${USER}"
-
-    # Install Sheldon
-    printf -- "%sInstalling Sheldon...%s\n"
-    wget -qO- https://rossmacarthur.github.io/install/crate.sh \
-        | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
 }
 
 main "$@"

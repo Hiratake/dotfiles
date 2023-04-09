@@ -1,7 +1,0 @@
-{{- if and .is_op .is_linux (not .is_macos) (not .is_devcontainer) -}}
-{{-  range (onepassword "ind6ltagpa65w7v2wjacu42iqq").fields -}}
-{{-    if eq .id "private_key" -}}
-{{-      .value -}}
-{{-    end -}}
-{{-  end -}}
-{{- end -}}

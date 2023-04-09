@@ -1,0 +1,3 @@
+{{- if and .is_op .is_linux (not .is_macos) (not .is_devcontainer) }}
+{{- onepasswordDocument "ind6ltagpa65w7v2wjacu42iqq" }}
+{{- end }}

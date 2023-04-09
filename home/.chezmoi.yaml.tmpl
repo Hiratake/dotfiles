@@ -1,5 +1,6 @@
 {{- $name := "" -}}
 {{- $email := "" -}}
+{{- $op := false -}}
 
 {{- $interactive := stdinIsATTY -}}
 
@@ -62,6 +63,33 @@
 {{-   end -}}
 {{- end -}}
 
+{{- if hasKey . "op" -}}
+{{-   $op = .op -}}
+{{- end -}}
+{{- if $interactive -}}
+{{-   range $i := until 99 -}}
+{{-     $question := "❔ Do you use GitHub with 1Password [y/N]" -}}
+{{-     $answer := "n" -}}
+{{-     $answer = promptString $question -}}
+{{-     $answer = lower $answer -}}
+{{-     if regexMatch "^[yn]$" $answer -}}
+{{-       if eq $answer "y" -}}
+{{-         $op = true -}}
+{{-         writeToStdout "✅ Use GitHub with 1Password\n" -}}
+{{-       else -}}
+{{-         $op = false -}}
+{{-         writeToStdout "✅ Not use GitHub with 1Password\n" -}}
+{{-       end -}}
+{{-       break -}}
+{{-     end -}}
+{{-     writeToStdout (printf "❌ '%s' is an invalid input\n" $answer) -}}
+{{-     if eq $i 98 -}}
+{{-       writeToStdout "❌ ERROR: maximum tries exceeded\n" -}}
+{{-       exit 1 -}}
+{{-     end -}}
+{{-   end -}}
+{{- end -}}
+
 {{/* Here we "export" the variables, so we can access them outside this file */ -}}
 data:
   is_linux: {{ $linux }}
@@ -70,5 +98,6 @@ data:
   is_windows: {{ $windows }}
   is_wsl: {{ $wsl }}
   is_devcontainer: {{ $minimum }}
+  is_op: {{ $op }}
   name: "{{ $name }}"
   email: "{{ $email }}"

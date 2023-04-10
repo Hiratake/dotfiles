@@ -13,7 +13,7 @@ main() {
     printf -- "\n%s=== Install Homebrew... ===%s\n"
 
     # Install Homebrew
-    if [ ! command_exists brew ] || [ -z $CI ]; then
+    if ! command_exists brew || [ $CI ]; then
         printf -- "%sInstalling Homebrew...%s\n"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     else

@@ -2,3 +2,6 @@
 # ============================================================
 
 brew "gcc"
+brew "docker"
+brew "docker-compose"
+brew "lima"

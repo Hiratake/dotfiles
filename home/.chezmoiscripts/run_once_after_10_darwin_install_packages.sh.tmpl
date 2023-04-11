@@ -14,10 +14,9 @@ main() {
 
     # Install packages
     if command_exists brew; then
-        brew doctor
-        brew upgrade
-        brew bundle --global
         brew cleanup
+        brew doctor
+        brew bundle --file=~/.Brewfile --verbose --no-upgrade --no-lock
     else
         printf -- "%sHomebrew not installed.%s\n"
         exit 0

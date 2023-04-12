@@ -12,18 +12,18 @@ command_exists() {
 main() {
     printf -- "\n%s=== Setting up Docker on Lima... ===%s\n"
 
-    if ! command_exists docker; then
-        if command_exists limactl; then
-            # Setting up Docker using Lima
-            printf -- "%sSetting up Docker on Lima...%s\n"
-            limactl start --name=docker --tty=false ~/.config/lima/docker.yml
-        else
-            printf -- "%sLima not installed.%s\n"
-            exit 0
-        fi
+    if command_exists limactl; then
+        # Setting up Docker using Lima
+        printf -- "%sSetting up Docker on Lima...%s\n"
+        limactl start --tty=false ~/.config/lima/docker.yml
     else
-        printf -- "%sDocker already installed, skipping.%s\n"
+        printf -- "%sLima not installed.%s\n"
+        exit 0
     fi
+
+    printf -- "\n%s=== Setting up docker-compose... ===%s\n"
+    mkdir -p ~/.docker/cli-plugins
+    ln -sfn $(which docker-compose) ~/.docker/cli-plugins/docker-compose
 }
 
 main "$@"

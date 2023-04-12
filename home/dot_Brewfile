@@ -3,12 +3,14 @@
 
 # {{- if .is_macos }}
 
+brew "composer"
 brew "curl"
 brew "docker"
 brew "docker-compose"
 brew "gcc"
 brew "git"
 brew "lima"
+brew "php"
 brew "vim"
 brew "wget"
 

@@ -16,7 +16,7 @@ main() {
     if command_exists brew; then
         brew cleanup
         brew doctor
-        brew bundle --file=~/.Brewfile --verbose --no-upgrade --no-lock
+        brew bundle --file=~/.Brewfile --verbose --no-upgrade --no-lock || true
     else
         printf -- "%sHomebrew not installed.%s\n"
         exit 0

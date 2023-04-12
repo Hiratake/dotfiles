@@ -29,6 +29,10 @@ printf -- "%son VSCode Dev Containers: true%s\n"
 printf -- "%son VSCode Dev Containers: false%s\n"
 # {{- end }}
 
+# {{- if and .is_macos .mas }}
+printf -- "\n%sInstall apps from App Store: true%s\n"
+# {{- end }}
+
 # {{- if and (not .is_ubuntu) (not .is_macos) (not .is_windows) }}
 printf -- "\n%sNot supported.%s\n"
 exit 0

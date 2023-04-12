@@ -28,9 +28,16 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # {{- end }}
 
 # {{- if .is_macos }}
+# Homebrew
 # {{- if eq .chezmoi.arch "arm64" }}
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # {{- else }}
 eval "$(/usr/local/bin/brew shellenv)"
 # {{- end }}
+
+# Lima
+if command -v limactl >/dev/null 2>&1; then
+    export DOCKER_HOST="unix:///${HOME}/.lima/docker/sock/docker.sock"
+    limactl start docker
+fi
 # {{- end }}

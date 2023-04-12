@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# ~/setup_docker.sh
+# ============================================================
+
+# {{- if and .is_macos (not .is_devcontainer) }}
+
+command_exists() {
+    command -v "$@" >/dev/null 2>&1
+}
+
+main() {
+    printf -- "\n%s=== Setting up Docker on Lima... ===%s\n"
+
+    if ! command_exists docker; then
+        if command_exists limactl; then
+            # Setting up Docker using Lima
+            printf -- "%sSetting up Docker on Lima...%s\n"
+            limactl start --name=docker --tty=false ~/.config/lima/docker.yml
+        else
+            printf -- "%sLima not installed.%s\n"
+            exit 0
+        fi
+    else
+        printf -- "%sDocker already installed, skipping.%s\n"
+    fi
+}
+
+main "$@"
+
+# {{- end }}

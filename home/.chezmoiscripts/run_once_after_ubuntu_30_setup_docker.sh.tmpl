@@ -12,8 +12,8 @@ command_exists() {
 main() {
     printf -- "\n%s=== Setting up Docker... ===%s\n"
 
-    # Install packages
     if ! command_exists docker; then
+        # Install packages
         printf -- "%sInstalling packages...%s\n"
         sudo apt install ca-certificates curl gnupg
 

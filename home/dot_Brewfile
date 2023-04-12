@@ -1,7 +1,34 @@
 # ~/.Brewfile
 # ============================================================
 
-brew "gcc"
+# {{- if .is_macos }}
+
+brew "curl"
 brew "docker"
 brew "docker-compose"
+brew "gcc"
+brew "git"
 brew "lima"
+brew "vim"
+brew "wget"
+
+# {{- if .mas }}
+tap "homebrew/cask-fonts"
+
+brew "mas"
+cask "adobe-creative-cloud"
+cask "cyberduck"
+cask "dbeaver-community"
+cask "firefox"
+cask "google-chrome"
+cask "gyazo"
+cask "microsoft-office"
+cask "obs"
+cask "slack"
+cask "visual-studio-code"
+cask "zoom"
+cask "font-meslo-lg-nerd-font"
+cask "font-hackgen-nerd"
+# {{- end }}
+
+# {{- end }}

@@ -1,5 +1,6 @@
 {{- $name := "" -}}
 {{- $email := "" -}}
+{{- $mas := false -}}
 
 {{- $interactive := stdinIsATTY -}}
 
@@ -61,6 +62,26 @@
 {{-   end -}}
 {{- end -}}
 
+{{- if hasKey . "mas" -}}
+{{-   $mas = .mas -}}
+{{- end -}}
+{{- if $interactive -}}
+{{-   range $i := until 99 -}}
+{{-     $question := "❔ Do you want to install applications from App Store" -}}
+{{-     $mas = promptBool $question -}}
+{{-     if $mas -}}
+{{-       writeToStdout "✅ Install applications from App Store\n" -}}
+{{-     else -}}
+{{-       writeToStdout "✅ Not install applications from App Store\n" -}}
+{{-     end -}}
+{{-     break -}}
+{{-     if eq $i 98 -}}
+{{-       writeToStdout "❌ ERROR: maximum tries exceeded\n" -}}
+{{-       exit 1 -}}
+{{-     end -}}
+{{-   end -}}
+{{- end -}}
+
 {{/* Here we "export" the variables, so we can access them outside this file */ -}}
 data:
   is_ubuntu: {{ $ubuntu }}
@@ -70,3 +91,4 @@ data:
   is_devcontainer: {{ $minimum }}
   name: "{{ $name }}"
   email: "{{ $email }}"
+  mas: {{ $mas }}

@@ -1,6 +1,9 @@
 # ~/.bash_aliases
 # ============================================================
 
+alias vi='vim'
+
+# ls
 if command -v exa > /dev/null 2>&1; then
     alias exa='exa -F --icons'
     alias ls='exa'
@@ -12,4 +15,7 @@ else
     alias ll='ls -Al'
 fi
 
-alias vi='vim'
+# cat
+if command -v bat > /dev/null 2>&1; then
+    alias cat='bat'
+fi

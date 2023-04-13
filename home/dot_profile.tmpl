@@ -36,7 +36,7 @@ eval "$(/usr/local/bin/brew shellenv)"
 # {{- end }}
 
 # Lima
-if command -v limactl >/dev/null 2>&1 && [ -z $CI ]; then
+if command -v limactl > /dev/null 2>&1 && [ -z $CI ]; then
     export DOCKER_HOST="unix:///${HOME}/.lima/docker/sock/docker.sock"
     limactl start docker > /dev/null 2>&1
 fi

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# ~/install_packages.sh
+# ============================================================
+
+# {{- if and .is_ubuntu }}
+
+command_exists() {
+    command -v "$@" >/dev/null 2>&1
+}
+
+main() {
+    printf -- "\n%s=== Install packages... ===%s\n"
+
+    # Install packages
+    if command_exists exa; then
+        sudo apt install -y exa
+    fi
+
+}
+
+main "$@"
+
+# {{- end }}

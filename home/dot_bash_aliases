@@ -1,7 +1,15 @@
 # ~/.bash_aliases
 # ============================================================
 
-alias ls='ls -FG'
-alias la='ls -A'
-alias ll='ls -al'
+if command -v exa > /dev/null 2>&1; then
+    alias exa='exa -F --icons'
+    alias ls='exa'
+    alias la='exa -a'
+    alias ll='exa -aghl'
+else
+    alias ls='ls -FG'
+    alias la='ls -A'
+    alias ll='ls -Al'
+fi
+
 alias vi='vim'

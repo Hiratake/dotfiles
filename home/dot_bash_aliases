@@ -2,6 +2,7 @@
 # ============================================================
 
 alias vi='vim'
+alias history='history -i'
 
 # ls
 if command -v exa > /dev/null 2>&1; then

@@ -5,11 +5,11 @@ alias vi='vim'
 alias history='history -i'
 
 # ls
-if command -v exa > /dev/null 2>&1; then
-    alias exa='exa -F --icons'
-    alias ls='exa'
-    alias la='exa -a'
-    alias ll='exa -aghl'
+if command -v eza > /dev/null 2>&1; then
+    alias eza='eza -F --icons'
+    alias ls='eza'
+    alias la='eza -a'
+    alias ll='eza -aghl'
 else
     alias ls='ls -FG'
     alias la='ls -A'

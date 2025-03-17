@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "dependencyDashboard": false,
+  "extends": [
+    "config:base",
+    "group:allNonMajor"
+  ],
+  "labels": [
+    "🤖dependencies"
+  ],
+  "rangeStrategy": "bump"
+}

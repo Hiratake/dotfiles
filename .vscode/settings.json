@@ -1,0 +1,25 @@
+{
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.sh.tmpl": "shellscript",
+    "*.yaml.tmpl": "yaml",
+    "config.tmpl": "ini",
+    "dot_bash_aliases": "shellscript",
+    "dot_bash_profile": "shellscript",
+    "dot_bashrc": "shellscript",
+    "dot_profile.tmpl": "shellscript",
+    "dot_vimrc": "viml",
+    "dot_zshrc": "shellscript",
+    "dot_Brewfile": "ruby",
+    "ignore": "ignore"
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "[javascript][javascriptreact][typescript][typescriptreact][html][css][scss][vue][json][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}

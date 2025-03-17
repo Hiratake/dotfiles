@@ -1,0 +1,69 @@
+# ~/.zshrc
+# ============================================================
+
+if [[ -r "${HOME}/.profile" ]]; then
+  source "${HOME}/.profile"
+fi
+
+if [[ -r "${HOME}/.bash_aliases" ]]; then
+  source "${HOME}/.bash_aliases"
+fi
+
+# Powerlevel10k
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+autoload -Uz compinit && compinit
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit ice wait lucid
+zinit light zsh-users/zsh-completions
+zinit ice wait lucid
+zinit light zsh-users/zsh-autosuggestions
+zinit ice wait lucid
+zinit light zsh-users/zsh-syntax-highlighting
+zinit ice wait lucid
+zinit light momo-lab/zsh-replace-multiple-dots
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' ignore-parents parent pwd ..
+zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
+
+setopt print_eight_bit
+setopt no_beep
+setopt no_flow_control
+setopt nolistbeep
+setopt ignore_eof
+setopt interactive_comments
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt inc_append_history
+setopt extended_history
+setopt extended_glob
+setopt globdots
+setopt mark_dirs
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

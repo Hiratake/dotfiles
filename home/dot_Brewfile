@@ -1,0 +1,33 @@
+# ~/.Brewfile
+# ============================================================
+
+brew "awscli"
+brew "bat"
+brew "composer"
+brew "curl"
+brew "docker"
+brew "docker-compose"
+brew "eza"
+brew "gcc"
+brew "git"
+brew "lima"
+brew "mas"
+brew "php"
+brew "php@8.2"
+brew "vim"
+brew "wget"
+
+cask "cyberduck"
+cask "dbeaver-community"
+cask "figma"
+cask "firefox"
+cask "google-chrome"
+cask "gyazo"
+cask "parallels"
+cask "slack"
+cask "visual-studio-code"
+cask "zoom"
+
+tap "homebrew/cask-fonts"
+cask "font-meslo-lg-nerd-font"
+cask "font-hackgen-nerd"

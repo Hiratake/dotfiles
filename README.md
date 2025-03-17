@@ -1,7 +1,5 @@
 # dotfiles
 
-[![ci](https://github.com/Hiratake/dotfiles/actions/workflows/ci.yaml/badge.svg)](https://github.com/Hiratake/dotfiles/actions/workflows/ci.yaml)
-
 Dotfiles for [Ubuntu on WSL](https://ubuntu.com/desktop/wsl) and [macOS](https://www.apple.com/macos/).
 
 ## 🚀 Installation

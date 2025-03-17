@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# {{- if .wsl }}
+
+# Update
+printf -- "%sUpdate%s\n"
+sudo apt -y update
+sudo apt -y upgrade
+
+# {{- end }}

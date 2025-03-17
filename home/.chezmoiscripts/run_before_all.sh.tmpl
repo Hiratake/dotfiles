@@ -1,0 +1,14 @@
+#!/bin/bash
+
+printf -- "\n%sdotfiles.%s\n"
+
+# {{- if .darwin }}
+printf -- "%sSYSTEM: macOS%s\n"
+# {{- end }}
+
+# {{- if .wsl }}
+printf -- "%sSYSTEM: Windows Subsystem for Linux%s\n"
+# {{- end }}
+
+# Create workspace
+mkdir -p ~/workspace

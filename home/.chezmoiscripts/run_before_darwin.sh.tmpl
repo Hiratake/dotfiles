@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# {{- if .darwin }}
+
+# Xcode Command Line Tools
+printf -- "%sXcode Command Line Tools%s\n"
+xcode-select --install
+
+# {{- end }}

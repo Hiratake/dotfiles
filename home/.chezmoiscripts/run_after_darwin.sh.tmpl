@@ -1,0 +1,88 @@
+#!/bin/bash
+
+# {{- if .darwin }}
+
+command_exists() {
+  command -v "$@" >/dev/null 2>&1
+}
+
+main() {
+  # Homebrew
+  printf -- "\n%sHomebrew%s\n"
+  if ! command_exists brew || [ $CI ]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # {{- if eq .chezmoi.arch "arm64" }}
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    # {{- else }}
+    eval "$(/usr/local/bin/brew shellenv)"
+    # {{- end }}
+  else
+    printf -- "%sHomebrew already installed, skipping.%s\n"
+  fi
+
+  # Homebrew Formulae
+  printf -- "\n%sHomebrew Formulae%s\n"
+  if command_exists brew; then
+    brew cleanup
+    brew doctor
+    brew bundle --file=~/.Brewfile --verbose --no-upgrade --no-lock || true
+    brew unlink php
+    brwe link --force --overwrite php@8.2
+  else
+    printf -- "%sbrew command not found, skipping.%s\n"
+  fi
+
+  # Volta
+  printf -- "\n%sVolta%s\n"
+  if ! command_exists volta; then
+    curl https://get.volta.sh | bash -s -- --skip-setup
+    source "${HOME}/.profile"
+  else
+    printf -- "%sVolta already installed, skipping.%s\n"
+  fi
+
+  # Node.JS
+  printf -- "\n%sNode.JS%s\n"
+  if command_exists volta; then
+    volta install node
+    volta install pnpm
+    volta install yarn@1
+    npm install -g @aws-amplify/cli @hiratake/aws-mfa
+  else
+    printf -- "%svolta command not found, skipping.%s\n"
+  fi
+
+  # Docker
+  printf -- "\n%sDocker%s\n"
+  if command_exists limactl; then
+    limactl start --tty=false ~/.config/lima/docker.yml
+    mkdir -p ~/.docker/cli-plugins
+    ln -sfn $(which docker-compose) ~/.docker/cli-plugins/docker-compose
+  else
+    printf -- "%slimactl command not found, skipping.%s\n"
+  fi
+
+  # AWS
+  printf -- "\n%sAWS%s\n"
+  if command_exists pip; then
+    pip install git-remote-codecommit
+  else
+    printf -- "%spip command not found, skipping.%s\n"
+  fi
+  if command_exists aws; then
+    aws configure
+    if command_exists aws-mfa; then
+      aws-mfa
+    else
+      printf -- "%saws-mfa command not found, skipping.%s\n"
+    fi
+  else
+    printf -- "%saws command not found, skipping.%s\n"
+  fi
+
+  printf -- "%sDone.%s\n"
+}
+
+main "$@"
+
+# {{- end }}

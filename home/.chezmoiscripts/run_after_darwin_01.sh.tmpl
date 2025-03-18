@@ -27,7 +27,7 @@ main() {
     brew doctor
     brew bundle --file=~/.Brewfile --verbose --no-upgrade --no-lock || true
     brew unlink php
-    brwe link --force --overwrite php@8.2
+    brew link --force --overwrite php@8.2
   else
     printf -- "%sbrew command not found, skipping.%s\n"
   fi

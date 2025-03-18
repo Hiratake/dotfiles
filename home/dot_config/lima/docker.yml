@@ -29,7 +29,7 @@ mounts:
   - location: '/tmp/lima'
     writable: true
 
-memory: '8Gib'
+memory: '8GiB'
 
 # containerd is managed by Docker, not by Lima, so the values are set to false here.
 containerd:

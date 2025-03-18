@@ -1,11 +1,31 @@
 {
+  "breadcrumbs.enabled": false,
+  "dotenv.enableAutocloaking": false,
   "editor.detectIndentation": false,
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.guides.bracketPairs": "active",
   "editor.insertSpaces": true,
+  "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
+  "editor.stickyScroll.enabled": false,
   "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
+  },
+  "editor.unicodeHighlight.allowedCharacters": {
+    "｜": true
+  },
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.wordWrap": "on",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "files.associations": {
+    "*.page-template": "vue",
+    "*.layout-template": "vue",
+    "*.vue": "vue",
     "*.sh.tmpl": "shellscript",
     "*.yaml.tmpl": "yaml",
+    ".env*": "dotenv",
     "config.tmpl": "ini",
     "dot_bash_aliases": "shellscript",
     "dot_bash_profile": "shellscript",
@@ -18,7 +38,21 @@
   },
   "files.eol": "\n",
   "files.insertFinalNewline": true,
-  "[javascript][javascriptreact][typescript][typescriptreact][html][css][scss][vue][json][yaml]": {
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
+  "gitlens.views.repositories.showStashes": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.fontFamily": "\"MesloLGS Nerd Font\", \"MesloLGS NF\", \"PlemolJP35 Console NF\", \"HackGen35 Console NF\", Menlo, Consolas, Monaco, monospace",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "[javascript][javascriptreact][typescript][typescriptreact][html][css][scss][vue][json][jsonc][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   }

@@ -1,7 +1,20 @@
 {
   "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+    "dbaeumer.vscode-eslint",
+    "dotenv.dotenv-vscode",
     "dunstontc.viml",
+    "eamodio.gitlens",
     "editorconfig.editorconfig",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "ms-azuretools.vscode-docker",
+    "ms-ceintl.vscode-language-pack-ja",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "nuxtr.nuxt-vscode-extentions",
+    "pkief.material-icon-theme",
+    "styled-components.vscode-styled-components",
+    "stylelint.vscode-stylelint",
+    "yzhang.markdown-all-in-one"
   ]
 }

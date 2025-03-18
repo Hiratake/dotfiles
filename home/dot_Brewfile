@@ -29,7 +29,6 @@ cask "slack"
 cask "visual-studio-code"
 cask "zoom"
 
-tap "homebrew/cask-fonts"
 cask "font-meslo-lg-nerd-font"
 cask "font-hackgen-nerd"
 cask "font-plemol-jp-nf"

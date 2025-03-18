@@ -14,6 +14,7 @@ brew "lima"
 brew "mas"
 brew "php"
 brew "php@8.2"
+brew "pipx"
 brew "vim"
 brew "wget"
 

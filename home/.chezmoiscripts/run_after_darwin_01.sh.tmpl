@@ -64,8 +64,8 @@ main() {
 
   # AWS
   printf -- "\n%sAWS%s\n"
-  if command_exists pip; then
-    pip install git-remote-codecommit
+  if command_exists pipx; then
+    pipx install git-remote-codecommit
   else
     printf -- "%spip command not found, skipping.%s\n"
   fi

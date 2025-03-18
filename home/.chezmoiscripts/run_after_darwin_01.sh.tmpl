@@ -25,7 +25,7 @@ main() {
   if command_exists brew; then
     brew cleanup
     brew doctor
-    brew bundle --file=~/.Brewfile --verbose --no-upgrade --no-lock || true
+    brew bundle --file=~/.Brewfile --verbose --no-upgrade || true
     brew unlink php
     brew link --force --overwrite php@8.2
   else

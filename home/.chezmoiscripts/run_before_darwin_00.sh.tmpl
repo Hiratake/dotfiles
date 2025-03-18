@@ -4,6 +4,8 @@
 
 # Xcode Command Line Tools
 printf -- "%sXcode Command Line Tools%s\n"
-xcode-select --install
+if ! xcode-select --install; then
+  printf -- "%sXcode Command Line Tools already installed, skipping.%s\n"
+fi
 
 # {{- end }}

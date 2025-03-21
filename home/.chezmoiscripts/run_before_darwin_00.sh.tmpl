@@ -3,7 +3,7 @@
 # {{- if .darwin }}
 
 # Xcode Command Line Tools
-printf -- "%sXcode Command Line Tools%s\n"
+printf -- "\n%sXcode Command Line Tools%s\n"
 if ! xcode-select --install; then
   printf -- "%sXcode Command Line Tools already installed, skipping.%s\n"
 fi

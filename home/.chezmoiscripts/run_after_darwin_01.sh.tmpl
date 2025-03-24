@@ -67,20 +67,20 @@ main() {
   if command_exists pipx; then
     pipx install git-remote-codecommit
   else
-    printf -- "%spip command not found, skipping.%s\n"
-  fi
-  if command_exists aws; then
-    aws configure
-    if command_exists aws-mfa; then
-      aws-mfa
-    else
-      printf -- "%saws-mfa command not found, skipping.%s\n"
-    fi
-  else
-    printf -- "%saws command not found, skipping.%s\n"
+    printf -- "%spipx command not found, skipping.%s\n"
   fi
 
-  printf -- "%sDone.%s\n"
+  # Next Steps
+  printf -- "\n%sNext Steps%s\n"
+  if command_exists aws; then
+    printf -- "%s- Run the following commands to settings up AWS:%s\n"
+    printf -- "%s    aws configure%s\n"
+    if command_exists aws-mfa; then
+      printf -- "%s    aws-mfa%s\n"
+    fi
+  fi
+
+  printf -- "%s\nDone.%s\n"
 }
 
 main "$@"

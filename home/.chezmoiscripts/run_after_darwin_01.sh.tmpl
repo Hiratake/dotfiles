@@ -47,7 +47,12 @@ main() {
     volta install node
     volta install pnpm
     volta install yarn@1
-    npm install -g @aws-amplify/cli @hiratake/aws-mfa
+    if ! command_exists amplify; then
+      npm install -g @aws-amplify/cli
+    fi
+    if ! command_exists aws-mfa; then
+      npm install -g @hiratake/aws-mfa
+    fi
   else
     printf -- "%svolta command not found, skipping.%s\n"
   fi

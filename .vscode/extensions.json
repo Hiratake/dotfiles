@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "bmewburn.vscode-intelephense-client",
     "bradlc.vscode-tailwindcss",
     "csstools.postcss",
     "dbaeumer.vscode-eslint",
@@ -8,6 +9,7 @@
     "eamodio.gitlens",
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
+    "laravel.vscode-laravel",
     "ms-azuretools.vscode-docker",
     "ms-ceintl.vscode-language-pack-ja",
     "ms-vscode-remote.vscode-remote-extensionpack",
@@ -15,6 +17,7 @@
     "pkief.material-icon-theme",
     "styled-components.vscode-styled-components",
     "stylelint.vscode-stylelint",
+    "xdebug.php-debug",
     "yzhang.markdown-all-in-one"
   ]
 }

@@ -19,6 +19,10 @@
   # See https://git-scm.com/docs/git-update-index#_untracked_cache
   untrackedCache = true
 
+  # {{- if .wsl }}
+  sshCommand = ssh.exe
+  # {{- end }}
+
 [diff]
   # List submodules commits in the range.
   submodule = log
@@ -52,3 +56,22 @@
 
   # Specify the username of the author/committer.
   name = "{{ .name }}"
+
+  # {{- if .wsl }}
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOeN3r8LSv+wiaKy1t4zTCwVwKGHJZ7exEECQMjCP/eq
+  # {{- end }}
+
+[gpg]
+  # {{- if .wsl }}
+  format = ssh
+  # {{- end }}
+
+[gpg "ssh"]
+  # {{- if .wsl }}
+  program = "/mnt/c/Users/hirat/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+  # {{- end }}
+
+[commit]
+  # {{- if .wsl }}
+  gpgsign = true
+  # {{- end }}

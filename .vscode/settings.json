@@ -27,7 +27,7 @@
     "*.yaml.tmpl": "yaml",
     ".env*": "dotenv",
     "config.tmpl": "ini",
-    "dot_bash_aliases": "shellscript",
+    "dot_bash_aliases.tmpl": "shellscript",
     "dot_bash_profile": "shellscript",
     "dot_bashrc": "shellscript",
     "dot_profile.tmpl": "shellscript",

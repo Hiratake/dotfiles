@@ -43,8 +43,30 @@
   "git.openRepositoryInParentFolders": "never",
   "gitlens.views.repositories.showStashes": true,
   "javascript.updateImportsOnFileMove.enabled": "never",
+  "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.fontFamily": "\"MesloLGS Nerd Font\", \"MesloLGS NF\", \"PlemolJP35 Console NF\", \"HackGen35 Console NF\", Menlo, Consolas, Monaco, monospace",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Ubuntu (WSL)": {
+      "path": "C:\\Windows\\System32\\wsl.exe",
+      "args": ["-d", "Ubuntu"]
+    }
+  },
   "typescript.updateImportsOnFileMove.enabled": "never",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editorAssociations": {

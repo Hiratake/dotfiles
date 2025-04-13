@@ -41,3 +41,10 @@ if command -v limactl > /dev/null 2>&1 && [ -z $CI ]; then
 fi
 
 # {{- end }}
+
+# {{- if .wsl }}
+
+# WSL
+export PATH="/mnt/c/users/hirat/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
+
+# {{- end }}

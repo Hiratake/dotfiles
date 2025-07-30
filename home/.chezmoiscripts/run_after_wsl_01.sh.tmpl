@@ -17,7 +17,7 @@ main() {
     printf -- "%sZsh already installed, skipping.%s\n"
   fi
 
-  # eza
+  # EZA
   printf -- "\n%seza%s\n"
   if ! command_exists eza; then
     sudo apt install -y gpg
@@ -31,7 +31,7 @@ main() {
     printf -- "%seza already installed, skipping.%s\n"
   fi
 
-  # bat
+  # BAT
   printf -- "\n%sbat%s\n"
   if ! command_exists bat; then
     sudo apt install -y bat
@@ -50,7 +50,7 @@ main() {
     printf -- "%sVolta already installed, skipping.%s\n"
   fi
 
-  # Node.JS
+  # Node.JS / PNPM / Yarn
   printf -- "\n%sNode.JS%s\n"
   if command_exists volta; then
     volta install node
@@ -58,6 +58,14 @@ main() {
     volta install yarn@1
   else
     printf -- "%svolta command not found, skipping.%s\n"
+  fi
+
+  # PHP / Composer / Laravel
+  printf -- "\n%sVolta%s\n"
+  if ! command_exists php; then
+    /bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
+  else
+    printf -- "%sPHP already installed, skipping.%s\n"
   fi
 
   # Docker

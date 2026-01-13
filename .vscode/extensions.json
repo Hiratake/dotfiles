@@ -10,6 +10,7 @@
     "eamodio.gitlens",
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
+    "hverlin.mise-vscode",
     "laravel.vscode-laravel",
     "ms-azuretools.vscode-containers",
     "ms-azuretools.vscode-docker",
@@ -19,6 +20,7 @@
     "pkief.material-icon-theme",
     "styled-components.vscode-styled-components",
     "stylelint.vscode-stylelint",
+    "tombi-toml.tombi",
     "xdebug.php-debug",
     "yzhang.markdown-all-in-one"
   ]

@@ -1,0 +1,12 @@
+[tools]
+node = "24"
+pnpm = "latest"
+yarn = "1.22.22"
+
+# {{- if .darwin }}
+"npm:@aws-amplify/cli" = "latest"
+"npm:@hiratake/aws-mfa" = "latest"
+# {{- end }}
+
+[settings]
+experimental   = true

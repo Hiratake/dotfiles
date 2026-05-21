@@ -21,9 +21,6 @@ if [ -d "${HOME}/.local/bin" ]; then
   export PATH="${HOME}/.local/bin:${PATH}"
 fi
 
-# mise
-eval "$(mise activate zsh)"
-
 # {{- if .darwin }}
 
 # Homebrew
@@ -47,3 +44,6 @@ fi
 export PATH="/mnt/c/users/hirat/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
 
 # {{- end }}
+
+# mise
+eval "$(mise activate zsh)"

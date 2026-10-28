@@ -17,7 +17,8 @@ main() {
     eval "$(/usr/local/bin/brew shellenv)"
     # {{- end }}
   else
-    printf -- "%sHomebrew already installed, skipping.%s\n"
+    brew update
+    brew upgrade
   fi
 
   # Homebrew Formulae
@@ -32,7 +33,7 @@ main() {
     printf -- "%sbrew command not found, skipping.%s\n"
   fi
 
-  # Node.JS / PNPM / Yarn
+  # Node.JS / PNPM
   printf -- "\n%sNode.JS%s\n"
   if command_exists mise; then
     mise install

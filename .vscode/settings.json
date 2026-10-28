@@ -57,7 +57,7 @@
     "searchAndCompare": false,
     "launchpad": false
   },
-  "javascript.updateImportsOnFileMove.enabled": "never",
+  "js/ts.updateImportsOnFileMove.enabled": "never",
   "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.fontFamily": "\"MesloLGS Nerd Font\", \"MesloLGS NF\", \"PlemolJP35 Console NF\", \"HackGen35 Console NF\", Menlo, Consolas, Monaco, monospace",
@@ -82,7 +82,6 @@
       "args": ["-d", "Ubuntu"]
     }
   },
-  "typescript.updateImportsOnFileMove.enabled": "never",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editorAssociations": {
     "*.svg": "default"

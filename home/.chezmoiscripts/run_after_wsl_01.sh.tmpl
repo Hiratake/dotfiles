@@ -68,7 +68,7 @@ main() {
   # PHP / Composer / Laravel
   printf -- "\n%sPHP%s\n"
   if ! command_exists php; then
-    /bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
+    /bin/bash -c "$(curl -fsSL https://php.new/install/linux)"
   else
     printf -- "%sPHP already installed, skipping.%s\n"
   fi

@@ -17,7 +17,8 @@ main() {
     eval "$(/usr/local/bin/brew shellenv)"
     # {{- end }}
   else
-    printf -- "%sHomebrew already installed, skipping.%s\n"
+    brew update
+    brew upgrade
   fi
 
   # Homebrew Formulae

@@ -93,6 +93,14 @@ main() {
     printf -- "%sDocker already installed, skipping.%s\n"
   fi
 
+  # AI Agents
+  printf -- "\n%sAI Agents%s\n"
+  if ! command_exists bwrap; then
+    sudo apt install -y bubblewrap
+  else
+    printf -- "%sBubblewrap already installed, skipping.%s\n"
+  fi
+
   printf -- "%sDone.%s\n"
 }
 

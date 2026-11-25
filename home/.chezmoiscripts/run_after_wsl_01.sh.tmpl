@@ -100,6 +100,11 @@ main() {
   else
     printf -- "%sBubblewrap already installed, skipping.%s\n"
   fi
+  if ! command_exists apm; then
+    curl -sSL https://aka.ms/apm-unix | sh
+  else
+    printf -- "%sAPM already installed, skipping.%s\n"
+  fi
 
   printf -- "%sDone.%s\n"
 }
